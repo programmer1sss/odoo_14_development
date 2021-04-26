@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hospital_visit_action" model="ir.actions.act_window">
+        <field name="name">Visit</field>
+        <field name="res_model">hospital.visit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="hospital_visit_view_form" model="ir.ui.view">
+        <field name="name">hospital.visit.view.form</field>
+        <field name="model">hospital.visit</field>
+        <field name="arch" type="xml">
+            <form string="Visit">
+                <sheet>
+                    <group>
+                    <field name="name"></field>
+                    <field name="patient_id"></field>
+                    <field name="data"></field>
+                    <field name="patient_gender"></field>
+                    <field name="temperature"></field>
+                    <field name="diagnosis"></field>
+                        
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="hospital_visit_view_tree" model="ir.ui.view">
+        <field name="name">hospital.visit.view.tree</field>
+        <field name="model">hospital.visit</field>
+        <field name="arch" type="xml">
+            <tree string="Visits">
+                <field name="name"></field>
+                <field name="patient_id"></field>
+                <field name="data"></field>
+                <field name="diagnosis"></field>
+                <field name="patient_gender"></field>
+                <field name="temperature"></field>
+            </tree>
+        </field>
+    </record>
+  
+    <menuitem id="hospital_visit_menu" name="Visits" parent="hospital_root_menu" action="hospital_visit_action"/>
+    
+</odoo>

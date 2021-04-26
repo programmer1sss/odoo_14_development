@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hospital_technical_staff_action" model="ir.actions.act_window">
+        <field name="name">Technical Staff</field>
+        <field name="res_model">hospital.staff</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- <record id="hospital_technical_staff_form" model="ir.ui.view">
+        <field name="name">hospital.technical.staff.form</field>
+        <field name="model">hospital.staff</field>
+        <field name="arch" type="xml">
+            <form string="Staff">
+                <sheet>
+                    <group>
+                    <field name="name"></field>
+                    
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="hospital_technical_staff_tree" model="ir.ui.view">
+        <field name="name">hospital.staff.view.tree</field>
+        <field name="model">hospital.staff</field>
+        <field name="arch" type="xml">
+            <tree string="Staff">
+                <field name="name"></field>
+                
+            </tree>
+        </field>
+    </record> -->
+  
+    
+  
+    <menuitem id="hospital_technical_staff_menu" name="Technical Staff" parent="hospital_root_menu" action="hospital_technical_staff_action"/>
+    
+</odoo>

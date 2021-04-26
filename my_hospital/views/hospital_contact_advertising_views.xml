@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hospital_contact_advertising_company_action" model="ir.actions.act_window">
+        <field name="name">contact.advertising.company.actions</field>
+        <field name="res_model">hospital.advertising</field>
+        <field name="view_mode">tree,form</field>  
+    </record>  
+  
+    <menuitem id="hospital_contact_advertising_company_menu" name="Contacts of advertising companies" parent="hospital_root_menu" action="hospital_contact_advertising_company_action"/>
+    
+</odoo>

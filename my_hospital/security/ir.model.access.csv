@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hospital_unit,hospital.unit,model_hospital_unit,,1,1,1,1
+access_hospital_contact,hospital.contact,model_hospital_contact,,1,1,1,1
+access_hospital_doctor,hospital.doctor,model_hospital_doctor,,1,1,1,1
+access_hospital_patient,hospital.patient,model_hospital_patient,,1,1,1,1
+access_hospital_visit,hospital.visit,model_hospital_visit,,1,1,1,1
+access_hospital_technical_staff,hospital.staff,model_hospital_staff,,1,1,1,1
+access_hospital_advertising,hospital.advertising,model_hospital_advertising,,1,1,1,1
+

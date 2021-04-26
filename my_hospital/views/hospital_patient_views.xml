@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hospital_patient_action" model="ir.actions.act_window">
+        <field name="name">Patient</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="hospital_patient_form" model="ir.ui.view">
+        <field name="name">patient.form </field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <form string="Pacient">
+                <header>
+                    <button name="issue_sick_leave" string="Issue sick leave" type="object"/>
+                    <button name="create_visit" string="Create Visit" type="object"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="gender"></field>
+                        <field name="birthday"></field>
+                        <field name="comment"></field>
+                        <field name="telephone"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="hospital_patient_view_tree" model="ir.ui.view">
+        <field name="name">patient.tree</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree string="Pacients">
+                <field name="name"></field>
+                    <field name="gender"></field>
+                    <field name="birthday"></field>
+                    <field name="comment"></field>
+                    <field name="telephone"></field>
+            </tree>
+        </field>
+    </record>
+  
+    <menuitem id="hospital_patient_menu" name="Patient" parent="hospital_root_menu" action="hospital_patient_action"/>
+    
+</odoo>

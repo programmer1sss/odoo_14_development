@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hospital_unit_action" model="ir.actions.act_window">
+        <field name="name">Unit</field>
+        <field name="res_model">hospital.unit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="hospital_unit_view_form" model="ir.ui.view">
+        <field name="name">hospital.unit.view.form</field>
+        <field name="model">hospital.unit</field>
+        <field name="arch" type="xml">
+            <form string="Unit">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="quantity_doctor"/>
+                        <field name="doctor_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="hospital_unit_view_tree" model="ir.ui.view">
+        <field name="name">hospital.unit.view.tree</field>
+        <field name="model">hospital.unit</field>
+        <field name="arch" type="xml">
+            <tree string="Units">
+                <field name="name"/>
+                <field name="quantity_doctor"/>
+            </tree>
+        </field>
+    </record>
+  
+
+    
+    <menuitem id="hospital_unit_menu" name="Unit " parent="hospital_root_menu" action="hospital_unit_action"/>
+    
+</odoo>
