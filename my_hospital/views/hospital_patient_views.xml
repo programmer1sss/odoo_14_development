@@ -13,6 +13,7 @@
                 <header>
                     <button name="issue_sick_leave" string="Issue sick leave" type="object"/>
                     <button name="create_visit" string="Create Visit" type="object"/>
+                    <button name="q_visit" string="Visit" type="object"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>

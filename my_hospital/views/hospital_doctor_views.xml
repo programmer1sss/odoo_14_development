@@ -5,7 +5,40 @@
         <field name="res_model">hospital.doctor</field>
         <field name="view_mode">tree,form</field>
     </record>
-    
+    <record id="hospital_doctor_form" model="ir.ui.view">
+        <field name="name">hospital.doctor.form </field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form string="Doctor">
+                <header>
+                    <button name="create_patient" string="Create Pacient" type="object"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="title"></field>
+                        <field name="date_of_hiring"></field>
+                        <field name="education"></field>
+                        <field name="patient_ids"></field>
+                        <field name="unit_id"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="hospital_doctor_view_tree" model="ir.ui.view">
+        <field name="name">doctor.tree</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <tree string="Doctors">
+                <field name="name"></field>
+                        <field name="title"></field>
+                        <field name="date_of_hiring"></field>
+                        <field name="education"></field>
+                        <field name="patient_ids"></field>
+                        <field name="unit_id"></field>
+            </tree>
+        </field>
+    </record>   
     <menuitem id="hospital_doctor_menu" name="Doctor" parent="hospital_root_menu" action="hospital_doctor_action"/>
-    
 </odoo>

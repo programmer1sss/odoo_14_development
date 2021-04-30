@@ -18,32 +18,9 @@ class HospitalPatient(models.Model):
     comment = fields.Text(
         'comment'
     )  
-    telephone = fields.Char(
+    telephone = fields.Integer(
         string='Telephone',
     )
-    state = fields.Selection(
-        string='state',
-        selection=[('in_hospital', 'In hospital'), 
-                   ('on_sick_leave', 'On sick leave'),
-                   ('discharged', 'Discharged')]
-    )
-    def change_state(self, new_state):
-        for patient in self:
-            if patient.state == new_state :
-                raise models.ValidationError('The patient is already on sick leave')
-            else:
-                patient.state = new_state         
-
-    def issue_sick_leave(self):
-        self.change_state('in_hospital')
-    
-    def create_visit(self):
-        # for patient in self:
-        #         parent_visit_val = {
-        #             'patient_id': patient,
-        #         }
-        record = self.env['hospital.visit'].create({'name': 'Test','patient_id': self.id })
-        return True
 
     @api.constrains('telephone')
     def check_telephone(self):
@@ -84,9 +61,7 @@ class HospitalDoctor(models.Model):
 
 class HospitalVisit(models.Model):
     _name = 'hospital.visit'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Hospital Visits'
-    
 
     name = fields.Char(
         string='Name',
